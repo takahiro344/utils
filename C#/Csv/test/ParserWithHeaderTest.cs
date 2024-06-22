@@ -13,11 +13,11 @@ public class ParserWithHeaderTest
 
         var expected = new List<PersonEntity>()
         {
-            new() { Name = "John", Age = 25, Height = 180, Weight = 75 },
-            new() { Name = "Tom", Age = 30, Height = 175, Weight = 80 },
-            new() { Name = "Alice", Age = 28, Height = 160, Weight = 55 },
-            new() { Name = "Bob", Age = 35, Height = 170, Weight = 70 },
-            new() { Name = "Emily", Age = 27, Height = 165, Weight = 60 },
+            new() { Name = "John", Age = 25, Height = 180m, Weight = 75m },
+            new() { Name = "Tom", Age = 30, Height = 175m, Weight = 80m },
+            new() { Name = "Alice", Age = 28, Height = 160m, Weight = 55m },
+            new() { Name = "Bob", Age = 35, Height = 170m, Weight = 70m },
+            new() { Name = "Emily", Age = 27, Height = 165m, Weight = 60m },
         };
         foreach (var (expectedPerson, actualPerson) in expected.Zip(actual))
         {
