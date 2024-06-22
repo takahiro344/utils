@@ -23,4 +23,10 @@
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+		<None Update="test\no-header\data\**">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
 </Project>
