@@ -13,11 +13,12 @@ public static class Parser
         var header = lines.First().Split(',');
         var data = lines.Skip(1).Select(l => l.Split(','));
 
+        var properties = typeof(T).GetProperties();
+
         var result = new List<T>();
         foreach (var row in data)
         {
             var item = new T();
-            var properties = typeof(T).GetProperties();
 
             for (int i = 0; i < header.Length; i++)
             {
