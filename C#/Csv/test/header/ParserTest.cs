@@ -9,7 +9,7 @@ public class ParserTest
     [Fact]
     public void Test_Parse()
     {
-        var actual = Parser.Parse<PersonEntity>("test/header/data/persons_with_header.csv");
+        var actual = Parser.Parse<PersonEntity>("test/header/data/persons.csv");
 
         var expected = new List<PersonEntity>()
         {
