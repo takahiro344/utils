@@ -1,4 +1,4 @@
-﻿namespace Csv;
+﻿namespace Csv.src.header;
 
 public class PersonEntity
 {

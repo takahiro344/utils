@@ -1,6 +1,6 @@
-﻿namespace Csv;
+﻿namespace Csv.src.header;
 
-public static class ParserWithHeader
+public static class Parser
 {
     public static List<T> Parse<T>(string filePath) where T : new()
     {

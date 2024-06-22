@@ -1,15 +1,15 @@
 ﻿using Xunit;
 
-namespace Csv.Test;
+namespace Csv.test.header;
 
-using Csv;
+using Csv.src.header;
 
-public class ParserWithHeaderTest
+public class ParserTest
 {
     [Fact]
     public void Test_Parse()
     {
-        var actual = ParserWithHeader.Parse<PersonEntity>("test/data/persons_with_header.csv");
+        var actual = Parser.Parse<PersonEntity>("test/header/data/persons_with_header.csv");
 
         var expected = new List<PersonEntity>()
         {
