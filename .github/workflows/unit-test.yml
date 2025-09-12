@@ -1,0 +1,30 @@
+name: Run Unit Tests
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'C#/**'      # C#プロジェクト配下の変更時のみ実行
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'  # 必要な.NETのバージョンを指定
+
+      - name: Restore dependencies
+        run: dotnet restore C#/Utils.sln  # ソリューションファイルのパスを指定
+
+      - name: Build the project
+        run: dotnet build C#/Utils.sln --no-restore  # ソリューションファイルのパスを指定
+
+      - name: Run unit tests
+        run: dotnet test C#/Test/Utils.Test.csproj --no-build --verbosity normal  # テストプロジェクトのパスを指定
